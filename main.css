@@ -25,11 +25,26 @@ body {
 }
 
 #top {
+    display: flex;
+    flex-direction: row;
     z-index: 2;
     height: 25%;
     width: 100%;
 
     border-radius: 20px 20px 0 0;
+    font-size: 26px;
+    font-family:'Times New Roman', Times, serif;
+    color: #373738;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#city {
+    margin-left: 7%;
+}
+
+#time {
+    margin-right: 7%;
 }
 
 #mid {

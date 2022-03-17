@@ -4,15 +4,16 @@
     <link rel="stylesheet" href="main.css">
 </head>
 
-<body>
+<body onload="getLocation()">
 
     <main id="widget">
-        <div id="top"></div>
+        <div id="top">
+            <p id="city">Name of city</p>
+            <p id="time">Day of Week, Clock</p>
+        </div>
         <div id="mid"></div>
         <div id="bot"></div>
     </main>
-
-    <div id="like_button_container"></div>
 
     <script src="main.js"></script>
 </body>
