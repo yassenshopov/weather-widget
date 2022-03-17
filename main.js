@@ -12,7 +12,7 @@ function showPosition(position) {
   lat = position.coords.latitude;
   lon = position.coords.longitude;
 
-  let url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=d2631025fc05933bdc92b55c89eb4971&units=metric&';
+  let url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=d2631025fc05933bdc92b55c89eb4971&units=metric&';
 
   const Http = new XMLHttpRequest();
   Http.open("GET", url);
