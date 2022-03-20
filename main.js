@@ -19,6 +19,8 @@ function showPosition(position) {
   Http.send();
 
   let today = new Date();
+    
+  console.log(today.getDay())
 
   switch(today.getDay()) {
     case 1:
@@ -42,6 +44,11 @@ function showPosition(position) {
     case 7:
       wday = "Sunday";
       break;
+    case 0:
+      wday = "Sunday";
+      break;
+    default:
+      wday = "WDay_Error";
   }
 
   let time = wday + ", " + ('0' + today.getHours()).slice(-2) + ":" + today.getMinutes();
