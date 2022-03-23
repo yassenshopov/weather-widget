@@ -51,7 +51,7 @@ function showPosition(position) {
       wday = "WDay_Error";
   }
 
-  let time = wday + ", " + ('0' + today.getHours()).slice(-2) + ":" + today.getMinutes();
+  let time = wday + ", " + ('0' + today.getHours()).slice(-2) + ":" + ('0' + today.getMinutes()).slice(-2);
 
 
   Http.onreadystatechange = (e) => {
@@ -61,10 +61,39 @@ function showPosition(position) {
 
     document.getElementById("time").innerHTML = time;
 
+    let r = document.querySelector(':root');
     console.log(obj.weather[0].description);
-    if (obj.weather[0].description == "clear sky") {
-      let r = document.querySelector(':root');
-      r.style.setProperty('--main-bg-color','#b0edf7')
+    switch(obj.weather[0].description) {
+      case ("clear sky"):
+        r.style.setProperty('--main-bg-color','#b0edf7');
+        break;
+      case ("few clouds"):
+        r.style.setProperty('--main-bg-color','#a8abbf');
+        break;
+      case ("scattered clouds"):
+        r.style.setProperty('--main-bg-color','#7d7f96');
+        break;
+      case ("broken clouds"):
+        r.style.setProperty('--main-bg-color','#606061');
+        break;
+      case ("shower rain"):
+        r.style.setProperty('--main-bg-color','#3347ff');
+        break;
+      case ("rain"):
+        r.style.setProperty('--main-bg-color','#081699');
+        break;
+      case ("thunderstorm"):
+        r.style.setProperty('--main-bg-color','#0f035c');
+        break;
+      case ("snow"):
+        r.style.setProperty('--main-bg-color','#d7fcfc');
+        break;
+      case ("mist"):
+        r.style.setProperty('--main-bg-color','#a786bf');
+        break;
+      default:
+        r.style.setProperty('--main-bg-color','#cf0e75');
+        break;
     }
   }
 }
