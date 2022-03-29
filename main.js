@@ -12,10 +12,10 @@ function showPosition(position) {
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
   let url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=d2631025fc05933bdc92b55c89eb4971&units=metric&';
+   
+  let i = 0;
     
-  while (true) {
-      
-      setTimeout(() => {console.log("Pass!"); }, 5000);
+  while (i < 15) {
 
       const Http = new XMLHttpRequest();
       Http.open("GET", url);
@@ -97,7 +97,9 @@ function showPosition(position) {
           default:
             r.style.setProperty('--main-bg-color','#cf0e75');
             break;
-        }
+        }    
+        setTimeout(() => {console.log("Pass!"); }, 5000);
+        i = i + 1;
       }
   }
 }
