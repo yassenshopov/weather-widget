@@ -18,40 +18,39 @@ function showPosition(position) {
   Http.open("GET", url);
   Http.send();
 
-  let today = new Date();
-
-  console.log(today.getDay())
-
-  switch(today.getDay()) {
-    case 1:
-      wday = "Monday";
-      break;
-    case 2:
-      wday = "Tuesday";
-      break;
-    case 3:
-      wday = "Wednesday";
-      break;
-    case 4:
-      wday = "Thursday";
-      break;
-    case 5:
-      wday = "Friday";
-      break;
-    case 6:
-      wday = "Saturday";
-      break;
-    case 7:
-      wday = "Sunday";
-      break;
-    case 0:
-      wday = "Sunday";
-      break;
-    default:
-      wday = "WDay_Error";
-  }
+    let intervalId = window.setInterval(() => {
+        
+    let today = new Date();
+        
+    switch(today.getDay()) {
+        case 1:
+          wday = "Monday";
+          break;
+        case 2:
+          wday = "Tuesday";
+          break;
+        case 3:
+          wday = "Wednesday";
+          break;
+        case 4:
+          wday = "Thursday";
+          break;
+        case 5:
+          wday = "Friday";
+          break;
+        case 6:
+          wday = "Saturday";
+          break;
+        case 7:
+          wday = "Sunday";
+          break;
+        case 0:
+          wday = "Sunday";
+          break;
+        default:
+          wday = "WDay_Error";
+    }
     
-  let intervalId = window.setInterval(() => {
     let time = wday + ", " + ('0' + today.getHours()).slice(-2) + ":" + ('0' + today.getMinutes()).slice(-2);
     console.log("Refresh");
   },5000);
