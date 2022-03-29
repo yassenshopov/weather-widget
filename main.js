@@ -94,5 +94,6 @@ function showPosition(position) {
         break;
     }
   }
-  setTimeout(() => {console.log("Pass!"); }, 5000);
 }
+
+var intervalId = window.setInterval(() => {console.log("Pass.")}, 5000);
