@@ -50,8 +50,12 @@ function showPosition(position) {
     default:
       wday = "WDay_Error";
   }
+    
+  let intervalId = window.setInterval(() => {
+    let time = wday + ", " + ('0' + today.getHours()).slice(-2) + ":" + ('0' + today.getMinutes()).slice(-2);
+    console.log("Refresh");
+  },5000);
 
-  let time = wday + ", " + ('0' + today.getHours()).slice(-2) + ":" + ('0' + today.getMinutes()).slice(-2);
 
   Http.onreadystatechange = (e) => {
     const obj = JSON.parse(Http.responseText);
@@ -95,7 +99,4 @@ function showPosition(position) {
         break;
     }
   }
-  console.log("Refresh");
 }
-
-var intervalId = window.setInterval(getLocation(),5000);
