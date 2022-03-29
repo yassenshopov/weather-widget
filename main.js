@@ -14,6 +14,8 @@ function showPosition(position) {
   let url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=d2631025fc05933bdc92b55c89eb4971&units=metric&';
     
   while (true) {
+      
+      setTimeout(() => {console.log("Pass!"); }, 5000);
 
       const Http = new XMLHttpRequest();
       Http.open("GET", url);
