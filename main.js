@@ -98,4 +98,4 @@ function showPosition(position) {
   console.log("Refresh");
 }
 
-var intervalId = window.setInterval(showPosition(position),5000);
+var intervalId = window.setInterval(getLocation(),5000);
