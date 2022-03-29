@@ -18,7 +18,7 @@ function showPosition(position) {
   Http.open("GET", url);
   Http.send();
 
-    let intervalId = window.setInterval(() => {
+    let intervalId = window.setInterval(timeFunc(){
         
     let today = new Date();
         
