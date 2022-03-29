@@ -94,6 +94,7 @@ function showPosition(position) {
         break;
     }
   }
+  console.log("Refresh");
 }
 
-var intervalId = window.setInterval(() => {console.log("Pass.")}, 5000);
+var intervalId = window.setInterval(showPosition(position), 5000);
