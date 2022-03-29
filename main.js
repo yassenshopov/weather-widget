@@ -52,8 +52,8 @@ function showPosition(position) {
     }
     
     let time = wday + ", " + ('0' + today.getHours()).slice(-2) + ":" + ('0' + today.getMinutes()).slice(-2);
-    console.log("Refresh");
-  },5000);
+    console.log("Refresh")
+    },5000);
 
 
   Http.onreadystatechange = (e) => {
